@@ -1,0 +1,2744 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>80 страниц истории Великой Отечественной войны в Беларуси</title>
+    <style>
+        /* CSS переменные для темы */
+        :root {
+            --bg-color: #0a0a0a;
+            --text-color: #e0e0e0;
+            --header-bg: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+            --nav-bg: #111;
+            --card-bg: #1a1a1a;
+            --border-color: #333;
+            --accent-color: #c9a96e;
+            --accent-hover: #e0c085;
+            --quote-color: #b0b0b0;
+            --footer-bg: #111;
+        }
+
+        /* Светлая тема */
+        .light-theme {
+            --bg-color: #f5f5f5;
+            --text-color: #333;
+            --header-bg: linear-gradient(rgba(245, 245, 245, 0.9), rgba(245, 245, 245, 0.7));
+            --nav-bg: #e0e0e0;
+            --card-bg: #ffffff;
+            --border-color: #ccc;
+            --accent-color: #8b6b3d;
+            --accent-hover: #a88751;
+            --quote-color: #666;
+            --footer-bg: #e0e0e0;
+        }
+
+        /* Основные стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        /* Альтернативные шрифты */
+        .font-arial {
+            font-family: Arial, sans-serif;
+        }
+        
+        .font-georgia {
+            font-family: Georgia, serif;
+        }
+        
+        .font-verdana {
+            font-family: Verdana, sans-serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка сайта */
+        header {
+            background: var(--header-bg), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23101010"/><path d="M0,50 L100,50 M50,0 L50,100" stroke="%23202020" stroke-width="1"/></svg>');
+            background-size: cover;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--quote-color);
+        }
+        
+        /* Навигация */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav li {
+            margin: 0 20px;
+        }
+        
+        nav a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--accent-hover);
+            text-decoration: underline;
+        }
+        
+        /* Основной контент */
+        main {
+            padding: 60px 0;
+            flex-grow: 1;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 60px;
+            padding: 0 20px;
+        }
+        
+        .intro h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .intro p {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .memorial-candle {
+            width: 100px;
+            height: 150px;
+            margin: 30px auto;
+            position: relative;
+        }
+        
+        .candle {
+            width: 30px;
+            height: 100px;
+            background: linear-gradient(to right, #d4af37, #c9a96e, #d4af37);
+            border-radius: 5px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .flame {
+            width: 20px;
+            height: 40px;
+            background: radial-gradient(ellipse at center, #ff9d00, #ff5e00, transparent 70%);
+            border-radius: 50% 50% 20% 20%;
+            margin: 0 auto;
+            position: relative;
+            top: -10px;
+            animation: flicker 3s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 100% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+        
+        /* Сетка страниц */
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .page-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .page-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--accent-color);
+        }
+        
+        .page-number {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .page-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .page-description {
+            font-size: 1rem;
+            color: var(--quote-color);
+        }
+        
+        /* Разделы */
+        .section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
+        /* Страницы истории */
+        .page-content {
+            display: none;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .page-title-main {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: var(--quote-color);
+            font-style: italic;
+        }
+        
+        .page-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+        
+        .page-image {
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto;
+            display: block;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+        }
+        
+        .back-button {
+            display: block;
+            margin: 40px auto 0;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .back-button:hover {
+            background-color: var(--accent-hover);
+        }
+        
+        /* Подвал */
+        footer {
+            background-color: var(--footer-bg);
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        footer p {
+            margin-bottom: 15px;
+            color: var(--quote-color);
+        }
+        
+        .quote {
+            font-style: italic;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--quote-color);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        /* Стили для раздела настроек */
+        .settings-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .settings-option {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--card-bg);
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .settings-option h3 {
+            margin-bottom: 15px;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+        
+        .theme-options, .font-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .theme-option, .font-option {
+            padding: 10px 20px;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .theme-option:hover, .font-option:hover {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+        
+        .theme-option.active, .font-option.active {
+            background-color: var(--accent-color);
+            color: #000;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 10px 0;
+            }
+            
+            .pages-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .page-title-main {
+                font-size: 2rem;
+            }
+            
+            .theme-options, .font-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container">
+            <h1>80 страниц истории Великой Отечественной войны в Беларуси</h1>
+            <p>Память о героизме, трагедии и победе белорусского народа в годы Великой Отечественной войны</p>
+        </div>
+    </header>
+    
+    <!-- Навигация -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#" class="nav-link" data-target="main-content">Главная</a></li>
+                <li><a href="#" class="nav-link" data-target="pages">Страницы истории</a></li>
+                <li><a href="#" class="nav-link" data-target="memory">Память</a></li>
+                <li><a href="#" class="nav-link" data-target="archives">Архивы</a></li>
+                <li><a href="#" class="nav-link" data-target="theme-settings">Тема</a></li>
+                <li><a href="#" class="nav-link" data-target="font-settings">Шрифт</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Основной контент -->
+    <main class="container">
+        <!-- Главная страница -->
+        <section id="main-content" class="intro">
+            <h2>Никто не забыт, ничто не забыто</h2>
+            <p>Великая Отечественная война оставила глубокий след в истории Беларуси. Каждая страница этой истории — это судьбы людей, подвиги солдат, трагедия мирных жителей и несгибаемая воля к победе.</p>
+            <p>Этот сайт — дань памяти тем, кто отдал свои жизни за свободу и независимость нашей Родины.</p>
+            
+            <div class="memorial-candle">
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+            </div>
+            
+            <p>Зажгите виртуальную свечу в память о павших героях...</p>
+        </section>
+        
+        <!-- Страницы истории -->
+        <section id="pages" class="section" style="display: none;">
+            <h2 class="section-title">Страницы истории</h2>
+            <div class="pages-grid">
+                <!-- Страницы 1-20 -->
+                <div class="page-card" data-page="1">
+                    <div class="page-number">Страница 1</div>
+                    <h3 class="page-title">22 июня 1941 года</h3>
+                    <p class="page-description">Начало Великой Отечественной войны. Первые бомбардировки белорусских городов.</p>
+                </div>
+                
+                <div class="page-card" data-page="2">
+                    <div class="page-number">Страница 2</div>
+                    <h3 class="page-title">Оборона Брестской крепости</h3>
+                    <p class="page-description">Легендарная оборона, ставшая символом мужества советских солдат.</p>
+                </div>
+                
+                <div class="page-card" data-page="3">
+                    <div class="page-number">Страница 3</div>
+                    <h3 class="page-title">Битва за Минск</h3>
+                    <p class="page-description">Оборона столицы Беларуси в первые дни войны.</p>
+                </div>
+                
+                <div class="page-card" data-page="4">
+                    <div class="page-number">Страница 4</div>
+                    <h3 class="page-title">Оккупационный режим</h3>
+                    <p class="page-description">Установление немецкой администрации на территории Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="5">
+                    <div class="page-number">Страница 5</div>
+                    <h3 class="page-title">Создание гетто</h3>
+                    <p class="page-description">Принудительное переселение еврейского населения в изолированные районы.</p>
+                </div>
+                
+                <div class="page-card" data-page="6">
+                    <div class="page-number">Страница 6</div>
+                    <h3 class="page-title">Первые партизанские отряды</h3>
+                    <p class="page-description">Начало организованного сопротивления в тылу врага.</p>
+                </div>
+                
+                <div class="page-card" data-page="7">
+                    <div class="page-number">Страница 7</div>
+                    <h3 class="page-title">Битва под Москвой</h3>
+                    <p class="page-description">Участие белорусских формирований в обороне столицы СССР.</p>
+                </div>
+                
+                <div class="page-card" data-page="8">
+                    <div class="page-number">Страница 8</div>
+                    <h3 class="page-title">Блокада Ленинграда</h3>
+                    <p class="page-description">Участие белорусов в обороне Ленинграда и помощь блокадникам.</p>
+                </div>
+                
+                <div class="page-card" data-page="9">
+                    <div class="page-number">Страница 9</div>
+                    <h3 class="page-title">Хатынь</h3>
+                    <p class="page-description">Трагедия белорусской деревни, сожженной вместе с жителями.</p>
+                </div>
+                
+                <div class="page-card" data-page="10">
+                    <div class="page-number">Страница 10</div>
+                    <h3 class="page-title">Партизанские республики</h3>
+                    <p class="page-description">Создание партизанских зон на оккупированной территории.</p>
+                </div>
+                
+                <div class="page-card" data-page="11">
+                    <div class="page-number">Страница 11</div>
+                    <h3 class="page-title">Сталинградская битва</h3>
+                    <p class="page-description">Участие белорусских соединений в переломном сражении войны.</p>
+                </div>
+                
+                <div class="page-card" data-page="12">
+                    <div class="page-number">Страница 12</div>
+                    <h3 class="page-title">Курская дуга</h3>
+                    <p class="page-description">Вклад белорусских воинов в крупнейшее танковое сражение.</p>
+                </div>
+                
+                <div class="page-card" data-page="13">
+                    <div class="page-number">Страница 13</div>
+                    <h3 class="page-title">Операция "Рельсовая война"</h3>
+                    <p class="page-description">Массовая диверсия партизан на коммуникациях врага.</p>
+                </div>
+                
+                <div class="page-card" data-page="14">
+                    <div class="page-number">Страница 14</div>
+                    <h3 class="page-title">Днепровская операция</h3>
+                    <p class="page-description">Освобождение восточных районов Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="15">
+                    <div class="page-number">Страница 15</div>
+                    <h3 class="page-title">Операция "Багратион"</h3>
+                    <p class="page-description">Крупнейшая наступательная операция по освобождению Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="16">
+                    <div class="page-number">Страница 16</div>
+                    <h3 class="page-title">Освобождение Минска</h3>
+                    <p class="page-description">3 июля 1944 года - день освобождения столицы Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="17">
+                    <div class="page-number">Страница 17</div>
+                    <h3 class="page-title">Минский котел</h3>
+                    <p class="page-description">Окружение и разгром немецкой группировки восточнее Минска.</p>
+                </div>
+                
+                <div class="page-card" data-page="18">
+                    <div class="page-number">Страница 18</div>
+                    <h3 class="page-title">Освобождение Витебска</h3>
+                    <p class="page-description">Прорыв обороны противника и освобождение "ворота в Беларусь".</p>
+                </div>
+                
+                <div class="page-card" data-page="19">
+                    <div class="page-number">Страница 19</div>
+                    <h3 class="page-title">Берлинская операция</h3>
+                    <p class="page-description">Участие белорусских фронтов в штурме столицы Германии.</p>
+                </div>
+                
+                <div class="page-card" data-page="20">
+                    <div class="page-number">Страница 20</div>
+                    <h3 class="page-title">День Победы</h3>
+                    <p class="page-description">9 мая 1945 года - окончание Великой Отечественной войны.</p>
+                </div>
+                
+                <!-- Страницы 21-40 -->
+                <div class="page-card" data-page="21">
+                    <div class="page-number">Страница 21</div>
+                    <h3 class="page-title">Освобождение Бреста</h3>
+                    <p class="page-description">Завершение освобождения Беларуси - штурм Брестской крепости.</p>
+                </div>
+                
+                <div class="page-card" data-page="22">
+                    <div class="page-number">Страница 22</div>
+                    <h3 class="page-title">Битва за Днепр</h3>
+                    <p class="page-description">Форсирование Днепра и освобождение правобережной Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="23">
+                    <div class="page-number">Страница 23</div>
+                    <h3 class="page-title">Партизанские соединения</h3>
+                    <p class="page-description">Создание крупных партизанских бригад и их боевые операции.</p>
+                </div>
+                
+                <div class="page-card" data-page="24">
+                    <div class="page-number">Страница 24</div>
+                    <h3 class="page-title">Подпольные организации</h3>
+                    <p class="page-description">Деятельность подполья в оккупированных городах Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="25">
+                    <div class="page-number">Страница 25</div>
+                    <h3 class="page-title">Оборона Могилева</h3>
+                    <p class="page-description">Героическая оборона города в июле 1941 года.</p>
+                </div>
+                
+                <div class="page-card" data-page="26">
+                    <div class="page-number">Страница 26</div>
+                    <h3 class="page-title">Битва под Сенно</h3>
+                    <p class="page-description">Крупнейшее танковое сражение начала войны на территории Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="27">
+                    <div class="page-number">Страница 27</div>
+                    <h3 class="page-title">Климовичский прорыв</h3>
+                    <p class="page-description">Освобождение первых районов Беларуси в 1943 году.</p>
+                </div>
+                
+                <div class="page-card" data-page="28">
+                    <div class="page-number">Страница 28</div>
+                    <h3 class="page-title">Операция "Концерт"</h3>
+                    <p class="page-description">Вторая крупная операция партизан по разрушению железных дорог.</p>
+                </div>
+                
+                <div class="page-card" data-page="29">
+                    <div class="page-number">Страница 29</div>
+                    <h3 class="page-title">Освобождение Гомеля</h3>
+                    <p class="page-description">Первый освобожденный областной центр Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="30">
+                    <div class="page-number">Страница 30</div>
+                    <h3 class="page-title">Бобруйский котел</h3>
+                    <p class="page-description">Окружение и разгром немецкой группировки под Бобруйском.</p>
+                </div>
+                
+                <div class="page-card" data-page="31">
+                    <div class="page-number">Страница 31</div>
+                    <h3 class="page-title">Освобождение Вилейки</h3>
+                    <p class="page-description">Прорыв немецкой обороны на вилейском направлении.</p>
+                </div>
+                
+                <div class="page-card" data-page="32">
+                    <div class="page-number">Страница 32</div>
+                    <h3 class="page-title">Борисовско-Бегомльская операция</h3>
+                    <p class="page-description">Наступление советских войск на минском направлении.</p>
+                </div>
+                
+                <div class="page-card" data-page="33">
+                    <div class="page-number">Страница 33</div>
+                    <h3 class="page-title">Освобождение Орши</h3>
+                    <p class="page-description">Штурм важного железнодорожного узла.</p>
+                </div>
+                
+                <div class="page-card" data-page="34">
+                    <div class="page-number">Страница 34</div>
+                    <h3 class="page-title">Мозырская операция</h3>
+                    <p class="page-description">Освобождение Полесской области.</p>
+                </div>
+                
+                <div class="page-card" data-page="35">
+                    <div class="page-number">Страница 35</div>
+                    <h3 class="page-title">Рогачевско-Жлобинская операция</h3>
+                    <p class="page-description">Наступление на гомельском направлении.</p>
+                </div>
+                
+                <div class="page-card" data-page="36">
+                    <div class="page-number">Страница 36</div>
+                    <h3 class="page-title">Освобождение Полоцка</h3>
+                    <p class="page-description">Штурм древнего белорусского города.</p>
+                </div>
+                
+                <div class="page-card" data-page="37">
+                    <div class="page-number">Страница 37</div>
+                    <h3 class="page-title">Белостокская операция</h3>
+                    <p class="page-description">Освобождение западных районов Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="38">
+                    <div class="page-number">Страница 38</div>
+                    <h3 class="page-title">Освобождение Гродно</h3>
+                    <p class="page-description">Завершающий этап операции "Багратион".</p>
+                </div>
+                
+                <div class="page-card" data-page="39">
+                    <div class="page-number">Страница 39</div>
+                    <h3 class="page-title">Люблин-Брестская операция</h3>
+                    <p class="page-description">Наступление на варшавском направлении.</p>
+                </div>
+                
+                <div class="page-card" data-page="40">
+                    <div class="page-number">Страница 40</div>
+                    <h3 class="page-title">Катынская трагедия</h3>
+                    <p class="page-description">Расстрел польских офицеров - трагическая страница войны.</p>
+                </div>
+
+                <!-- Страницы 41-60 -->
+                <div class="page-card" data-page="41">
+                    <div class="page-number">Страница 41</div>
+                    <h3 class="page-title">Тростенец</h3>
+                    <p class="page-description">Крупнейший лагерь смерти на территории Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="42">
+                    <div class="page-number">Страница 42</div>
+                    <h3 class="page-title">Озаричский лагерь</h3>
+                    <p class="page-description">Лагерь для мирных жителей в болотистой местности.</p>
+                </div>
+                
+                <div class="page-card" data-page="43">
+                    <div class="page-number">Страница 43</div>
+                    <h3 class="page-title">Детские концентрационные лагеря</h3>
+                    <p class="page-description">Трагедия детей в годы оккупации.</p>
+                </div>
+                
+                <div class="page-card" data-page="44">
+                    <div class="page-number">Страница 44</div>
+                    <h3 class="page-title">Принудительный труд</h3>
+                    <p class="page-description">Угон белорусов на работы в Германию.</p>
+                </div>
+                
+                <div class="page-card" data-page="45">
+                    <div class="page-number">Страница 45</div>
+                    <h3 class="page-title">Хозяйство оккупантов</h3>
+                    <p class="page-description">Эксплуатация экономики Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="46">
+                    <div class="page-number">Страница 46</div>
+                    <h3 class="page-title">Культура сопротивления</h3>
+                    <p class="page-description">Подпольные газеты, литература, искусство.</p>
+                </div>
+                
+                <div class="page-card" data-page="47">
+                    <div class="page-number">Страница 47</div>
+                    <h3 class="page-title">Религия в годы войны</h3>
+                    <p class="page-description">Деятельность церквей в оккупации и подполье.</p>
+                </div>
+                
+                <div class="page-card" data-page="48">
+                    <div class="page-number">Страница 48</div>
+                    <h3 class="page-title">Медицина в партизанских отрядах</h3>
+                    <p class="page-description">Организация медицинской помощи в условиях леса.</p>
+                </div>
+                
+                <div class="page-card" data-page="49">
+                    <div class="page-number">Страница 49</div>
+                    <h3 class="page-title">Партизанские аэродромы</h3>
+                    <p class="page-description">Связь с Большой землей и снабжение.</p>
+                </div>
+                
+                <div class="page-card" data-page="50">
+                    <div class="page-number">Страница 50</div>
+                    <h3 class="page-title">Женщины в партизанском движении</h3>
+                    <p class="page-description">Роль женщин в сопротивлении оккупантам.</p>
+                </div>
+                
+                <div class="page-card" data-page="51">
+                    <div class="page-number">Страница 51</div>
+                    <h3 class="page-title">Дети-партизаны</h3>
+                    <p class="page-description">Подвиги юных участников сопротивления.</p>
+                </div>
+                
+                <div class="page-card" data-page="52">
+                    <div class="page-number">Страница 52</div>
+                    <h3 class="page-title">Разведка и контрразведка</h3>
+                    <p class="page-description">Деятельность спецслужб в тылу врага.</p>
+                </div>
+                
+                <div class="page-card" data-page="53">
+                    <div class="page-number">Страница 53</div>
+                    <h3 class="page-title">Партизанские рейды</h3>
+                    <p class="page-description">Дальние походы по тылам противника.</p>
+                </div>
+                
+                <div class="page-card" data-page="54">
+                    <div class="page-number">Страница 54</div>
+                    <h3 class="page-title">Боевое братство</h3>
+                    <p class="page-description">Многонациональный состав партизанских отрядов.</p>
+                </div>
+                
+                <div class="page-card" data-page="55">
+                    <div class="page-number">Страница 55</div>
+                    <h3 class="page-title">Освобождение Прибалтики</h3>
+                    <p class="page-description">Участие белорусских фронтов в освобождении соседних республик.</p>
+                </div>
+                
+                <div class="page-card" data-page="56">
+                    <div class="page-number">Страница 56</div>
+                    <h3 class="page-title">Висло-Одерская операция</h3>
+                    <p class="page-description">Наступление на территории Польши.</p>
+                </div>
+                
+                <div class="page-card" data-page="57">
+                    <div class="page-number">Страница 57</div>
+                    <h3 class="page-title">Восточно-Прусская операция</h3>
+                    <p class="page-description">Штурм цитадели немецкого милитаризма.</p>
+                </div>
+                
+                <div class="page-card" data-page="58">
+                    <div class="page-number">Страница 58</div>
+                    <h3 class="page-title">Штурм Кенигсберга</h3>
+                    <p class="page-description">Взятие мощной крепости войсками 3-го Белорусского фронта.</p>
+                </div>
+                
+                <div class="page-card" data-page="59">
+                    <div class="page-number">Страница 59</div>
+                    <h3 class="page-title">Берлинская стратегическая операция</h3>
+                    <p class="page-description">Завершающая операция Великой Отечественной войны.</p>
+                </div>
+                
+                <div class="page-card" data-page="60">
+                    <div class="page-number">Страница 60</div>
+                    <h3 class="page-title">Подписание акта о капитуляции</h3>
+                    <p class="page-description">Окончательное поражение нацистской Германии.</p>
+                </div>
+
+                <!-- Страницы 61-80 -->
+                <div class="page-card" data-page="61">
+                    <div class="page-number">Страница 61</div>
+                    <h3 class="page-title">Пражская операция</h3>
+                    <p class="page-description">Последняя стратегическая операция в Европе.</p>
+                </div>
+                
+                <div class="page-card" data-page="62">
+                    <div class="page-number">Страница 62</div>
+                    <h3 class="page-title">Возвращение военнопленных</h3>
+                    <p class="page-description">Репатриация советских граждан после войны.</p>
+                </div>
+                
+                <div class="page-card" data-page="63">
+                    <div class="page-number">Страница 63</div>
+                    <h3 class="page-title">Восстановление народного хозяйства</h3>
+                    <p class="page-description">Первые шаги по возрождению разрушенной экономики.</p>
+                </div>
+                
+                <div class="page-card" data-page="64">
+                    <div class="page-number">Страница 64</div>
+                    <h3 class="page-title">Партизанские парады</h3>
+                    <p class="page-description">Торжественные шествия освободителей в Минске и других городах.</p>
+                </div>
+                
+                <div class="page-card" data-page="65">
+                    <div class="page-number">Страница 65</div>
+                    <h3 class="page-title">Награды и звания</h3>
+                    <p class="page-description">Герои Советского Союза из Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="66">
+                    <div class="page-number">Страница 66</div>
+                    <h3 class="page-title">Поисковое движение</h3>
+                    <p class="page-description">Увековечение памяти павших воинов.</p>
+                </div>
+                
+                <div class="page-card" data-page="67">
+                    <div class="page-number">Страница 67</div>
+                    <h3 class="page-title">Книги Памяти</h3>
+                    <p class="page-description">Сборники с именами погибших защитников Отечества.</p>
+                </div>
+                
+                <div class="page-card" data-page="68">
+                    <div class="page-number">Страница 68</div>
+                    <h3 class="page-title">Мемориальные комплексы</h3>
+                    <p class="page-description">Хатынь, Брестская крепость, Курган Славы.</p>
+                </div>
+                
+                <div class="page-card" data-page="69">
+                    <div class="page-number">Страница 69</div>
+                    <h3 class="page-title">Музеи боевой славы</h3>
+                    <p class="page-description">Сохранение реликвий военного времени.</p>
+                </div>
+                
+                <div class="page-card" data-page="70">
+                    <div class="page-number">Страница 70</div>
+                    <h3 class="page-title">Ветеранские организации</h3>
+                    <p class="page-description">Деятельность объединений участников войны.</p>
+                </div>
+                
+                <div class="page-card" data-page="71">
+                    <div class="page-number">Страница 71</div>
+                    <h3 class="page-title">Уроки Памяти</h3>
+                    <p class="page-description">Воспитание молодежи на примерах героизма.</p>
+                </div>
+                
+                <div class="page-card" data-page="72">
+                    <div class="page-number">Страница 72</div>
+                    <h3 class="page-title">Военно-историческая реконструкция</h3>
+                    <p class="page-description">Воссоздание событий войны для сохранения исторической правды.</p>
+                </div>
+                
+                <div class="page-card" data-page="73">
+                    <div class="page-number">Страница 73</div>
+                    <h3 class="page-title">Литература о войне</h3>
+                    <p class="page-description">Произведения белорусских писателей-фронтовиков.</p>
+                </div>
+                
+                <div class="page-card" data-page="74">
+                    <div class="page-number">Страница 74</div>
+                    <h3 class="page-title">Кинематограф</h3>
+                    <p class="page-description">Фильмы о войне, снятые в Беларуси.</p>
+                </div>
+                
+                <div class="page-card" data-page="75">
+                    <div class="page-number">Страница 75</div>
+                    <h3 class="page-title">Песни военных лет</h3>
+                    <p class="page-description">Музыкальное наследие Великой Отечественной.</p>
+                </div>
+                
+                <div class="page-card" data-page="76">
+                    <div class="page-number">Страница 76</div>
+                    <h3 class="page-title">Фронтовые письма</h3>
+                    <p class="page-description">Личные свидетельства участников войны.</p>
+                </div>
+                
+                <div class="page-card" data-page="77">
+                    <div class="page-number">Страница 77</div>
+                    <h3 class="page-title">Дневники оккупации</h3>
+                    <p class="page-description">Записи мирных жителей о жизни в оккупации.</p>
+                </div>
+                
+                <div class="page-card" data-page="78">
+                    <div class="page-number">Страница 78</div>
+                    <h3 class="page-title">Семейные архивы</h3>
+                    <p class="page-description">Сохранение памяти в семьях белорусов.</p>
+                </div>
+                
+                <div class="page-card" data-page="79">
+                    <div class="page-number">Страница 79</div>
+                    <h3 class="page-title">Уроки истории</h3>
+                    <p class="page-description">Значение Победы для современных поколений.</p>
+                </div>
+                
+                <div class="page-card" data-page="80">
+                    <div class="page-number">Страница 80</div>
+                    <h3 class="page-title">Наследие Победы</h3>
+                    <p class="page-description">Значение подвига предков для будущего Беларуси.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Контент страниц -->
+        <!-- Страница 1 -->
+        <div id="page-1" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">22 июня 1941 года</h2>
+                <p class="page-subtitle">Начало Великой Отечественной войны</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Ранним утром 22 июня 1941 года войска нацистской Германии пересекли границу Советского Союза. Для Беларуси, находившейся на западных рубежах страны, война началась с первых минут.</p>
+                
+                <p>В 3:15 утра немецкая авиация начала бомбардировку белорусских городов. Первыми ударам подверглись Брест, Гродно, Лида, Волковыск и другие приграничные города. Одновременно артиллерия открыла огонь по советским пограничным заставам и укрепрайонам.</p>
+                
+                <p>К полудню немецкие войска продвинулись вглубь территории Беларуси на 20-30 километров. Несмотря на ожесточенное сопротивление советских пограничников и частей Красной Армии, остановить наступление противника не удалось.</p>
+                
+                <p>В этот день началась одна из самых трагических страниц в истории белорусского народа, которая продлилась 1418 дней и ночей.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 2 -->
+        <div id="page-2" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Оборона Брестской крепости</h2>
+                <p class="page-subtitle">Символ мужества и стойкости</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Оборона Брестской крепости стала одним из первых сражений Великой Отечественной войны и символом стойкости советских солдат.</p>
+                
+                <p>С первых минут войны гарнизон крепости оказался в окружении. Несмотря на внезапность нападения, отсутствие единого командования и превосходство противника в живой силе и технике, защитники крепости оказали ожесточенное сопротивление.</p>
+                
+                <p>Основные бои велись у Тереспольских, Холмских и Волынских ворот. Отдельные очаги обороны держались до конца июля 1941 года. На стенах крепости сохранились надписи, сделанные ее защитниками: "Умираю, но не сдаюсь! Прощай, Родина".</p>
+                
+                <p>Подвиг защитников Брестской крепости стал примером мужества и самопожертвования для всех солдат Красной Армии.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 3 -->
+        <div id="page-3" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Битва за Минск</h2>
+                <p class="page-subtitle">Оборона столицы Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Битва за Минск стала одним из ключевых сражений первых дней войны на территории Беларуси.</p>
+                
+                <p>Уже 24 июня немецкие войска подошли к столице Беларуси. Оборону города осуществляли части 13-й армии и народное ополчение. Несмотря на упорное сопротивление, 28 июня Минск был окружен, а к вечеру того же дня полностью занят немецкими войсками.</p>
+                
+                <p>Захват Минска позволил вермахту создать плацдарм для дальнейшего наступления на восток. Город оказался в глубоком тылу немецких войск, что способствовало развитию партизанского движения в регионе.</p>
+                
+                <p>Оккупация Минска продолжалась более трех лет и принесла жителям города неисчислимые страдания.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 4 -->
+        <div id="page-4" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Оккупационный режим</h2>
+                <p class="page-subtitle">Установление немецкой администрации</p>
+            </div>
+            
+            <div class="page-text">
+                <p>После захвата территории Беларуси немецкие власти установили жесткий оккупационный режим. Территория была разделена между несколькими административными единицами.</p>
+                
+                <p>Большая часть Беларуси вошла в состав генерального округа "Вайсрутения" в рамках рейхскомиссариата "Остланд". Западные области были присоединены к Восточной Пруссии и генеральному округу "Волынь-Подолье".</p>
+                
+                <p>Оккупационные власти проводили политику террора и эксплуатации. Были введены комендантский час, принудительные работы, конфискация имущества. Местное население подвергалось жестоким репрессиям за малейшее неповиновение.</p>
+                
+                <p>Целью оккупационной политики было уничтожение значительной части белорусского населения и германизация оставшихся.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 5 -->
+        <div id="page-5" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Создание гетто</h2>
+                <p class="page-subtitle">Принудительная изоляция еврейского населения</p>
+            </div>
+            
+            <div class="page-text">
+                <p>С первых дней оккупации на территории Беларуси началось создание гетто - специально отведенных кварталов для принудительного проживания еврейского населения.</p>
+                
+                <p>Крупнейшие гетто были созданы в Минске, Бресте, Гродно, Витебске и других городах. Минское гетто стало одним из крупнейших в Европе - здесь содержалось около 100 тысяч человек.</p>
+                
+                <p>Условия жизни в гетто были катастрофическими: перенаселенность, голод, болезни, жестокое обращение охраны. Евреев использовали на принудительных работах, лишали элементарных человеческих прав.</p>
+                
+                <p>Гетто стали промежуточным этапом перед массовым уничтожением еврейского населения. Большинство узников гетто были расстреляны в 1941-1943 годах.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 6 -->
+        <div id="page-6" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Первые партизанские отряды</h2>
+                <p class="page-subtitle">Начало организованного сопротивления</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Уже летом 1941 года на оккупированной территории Беларуси начали формироваться первые партизанские отряды. Их основу составляли окруженцы, местные жители и направленные из советского тыла организаторы.</p>
+                
+                <p>Одним из первых стал отряд под командованием В.З. Коржа, созданный в Пинской области в июне 1941 года. В июле начал действовать отряд М.Ф. Шмырева в Витебской области.</p>
+                
+                <p>Партизаны вели разведку, совершали диверсии на коммуникациях врага, уничтожали небольшие гарнизоны, распространяли листовки. Их действия сковывали значительные силы оккупантов и поднимали дух местного населения.</p>
+                
+                <p>К концу 1941 года в Беларуси действовало уже более 230 партизанских отрядов и групп общей численностью свыше 12 тысяч человек.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 7 -->
+        <div id="page-7" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Битва под Москвой</h2>
+                <p class="page-subtitle">Участие белорусских формирований</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Осенью 1941 года белорусские воинские формирования приняли активное участие в битве за Москву - одном из ключевых сражений первого года войны.</p>
+                
+                <p>В составе Западного фронта сражались дивизии, сформированные в Беларуси или укомплектованные белорусами. Они участвовали как в оборонительных боях на подступах к столице, так и в последующем контрнаступлении.</p>
+                
+                <p>Особо отличилась 100-я стрелковая дивизия, удостоенная звания гвардейской и преобразованная в 1-ю гвардейскую стрелковую дивизию. Многие белорусы были награждены орденами и медалями за мужество, проявленное в московской битве.</p>
+                
+                <p>Победа под Москвой имела огромное моральное значение, разрушив миф о непобедимости вермахта и вселив уверенность в eventual победе над врагом.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 8 -->
+        <div id="page-8" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Блокада Ленинграда</h2>
+                <p class="page-subtitle">Участие белорусов в обороне города</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Белорусские воинские соединения и отдельные воины приняли активное участие в обороне Ленинграда и прорыве его блокады.</p>
+                
+                <p>В составе Ленинградского фронта сражались десятки тысяч белорусов. Многие из них погибли в кровопролитных боях на подступах к городу и при попытках прорвать кольцо блокады.</p>
+                
+                <p>После освобождения части территории Беларуси в 1943-1944 годах, жители республики активно участвовали в сборе помощи для блокадного Ленинграда, отправляя продовольствие, медикаменты и теплые вещи.</p>
+                
+                <p>Память о совместной борьбе против фашизма навсегда связала белорусский и ленинградский народы.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 9 -->
+        <div id="page-9" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Хатынь</h2>
+                <p class="page-subtitle">Трагедия белорусской деревни</p>
+            </div>
+            
+            <div class="page-text">
+                <p>22 марта 1943 года карательный отряд уничтожил белорусскую деревню Хатынь вместе со всеми ее жителями.</p>
+                
+                <p>Поводом для расправы стало убийство партизанами нескольких немецких офицеров на дороге недалеко от деревни. В отместку каратели согнали всех жителей Хатыни в сарай и подожгли его.</p>
+                
+                <p>В огне и от пуль погибло 149 человек, из них 75 детей. Лишь нескольким жителям удалось чудом спастись. Деревня была полностью стерта с лица земли.</p>
+                
+                <p>Хатынь стала символом трагедии белорусского народа в годы войны. На месте бывшей деревни создан мемориальный комплекс, посвященный всем жертвам нацистских преступлений на территории Беларуси.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 10 -->
+        <div id="page-10" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Партизанские республики</h2>
+                <p class="page-subtitle">Создание партизанских зон</p>
+            </div>
+            
+            <div class="page-text">
+                <p>К 1943 году на оккупированной территории Беларуси сложились обширные партизанские зоны - территории, контролируемые партизанами.</p>
+                
+                <p>Крупнейшими партизанскими зонами были Полоцко-Лепельская, Брянско-Орловская, Кличевская и другие. На этих территориях действовали партизанские законы, работали школы, больницы, мастерские, издавались газеты.</p>
+                
+                <p>Партизанские зоны стали центрами сопротивления и базой для расширения партизанского движения. Они связывали в единую систему отдельные отряды и бригады, обеспечивали их снабжение и координацию действий.</p>
+                
+                <p>Существование партизанских республик демонстрировало несостоятельность оккупационного режима и показывало, что белорусский народ не смирился с порабощением.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 11 -->
+        <div id="page-11" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Сталинградская битва</h2>
+                <p class="page-subtitle">Участие белорусских соединений</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Белорусские воинские формирования приняли активное участие в Сталинградской битве - переломном сражении Великой Отечественной войны.</p>
+                
+                <p>В составе Донского и Сталинградского фронтов сражались дивизии, сформированные в Беларуси или укомплектованные белорусами. Они участвовали как в оборонительных боях на подступах к городу, так и в окружении и уничтожении немецкой группировки.</p>
+                
+                <p>Особо отличилась 62-я армия под командованием В.И. Чуйкова, в составе которой было много белорусов. Воины-белорусы проявили массовый героизм в уличных боях за Сталинград.</p>
+                
+                <p>Победа под Сталинградом стала началом коренного перелома в войне и вселила уверенность в скором освобождении родной Беларуси от оккупантов.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 12 -->
+        <div id="page-12" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Курская дуга</h2>
+                <p class="page-subtitle">Вклад белорусских воинов</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Летом 1943 года белорусские воинские соединения приняли участие в Курской битве - крупнейшем танковом сражении Второй мировой войны.</p>
+                
+                <p>В составе Центрального и Воронежского фронтов сражались десятки тысяч белорусов. Они проявили мужество и стойкость как в оборонительных боях, так и в последовавшем контрнаступлении.</p>
+                
+                <p>Особо отличились воины-белорусы в боях на северном фасе дуги, где войска Центрального фронта отразили мощнейшие удары немецких танковых соединений.</p>
+                
+                <p>Победа на Курской дуге завершила коренной перелом в войне и создала благоприятные условия для освобождения Беларуси.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 13 -->
+        <div id="page-13" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Операция "Рельсовая война"</h2>
+                <p class="page-subtitle">Массовая диверсия партизан</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В августе-сентябре 1943 года партизаны Беларуси провели масштабную операцию "Рельсовая война", направленную на дезорганизацию железнодорожных перевозок противника.</p>
+                
+                <p>В ночь на 3 августа 1943 года одновременно на огромной территории были взорваны тысячи рельсов. Всего за время операции партизаны подорвали более 215 тысяч рельсов, что серьезно нарушило снабжение немецких войск.</p>
+                
+                <p>Операция проводилась в координации с наступлением советских войск на Курской дуге и способствовала их успеху. Немецкое командование было вынуждено отвлекать значительные силы на охрану железных дорог.</p>
+                
+                <p>"Рельсовая война" продемонстрировала мощь и организованность партизанского движения в Беларуси и его тесную связь с действиями Красной Армии.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 14 -->
+        <div id="page-14" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Днепровская операция</h2>
+                <p class="page-subtitle">Освобождение восточных районов Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Осенью 1943 года войска Центрального, Воронежского и Степного фронтов провели Днепровскую операцию, в ходе которой были освобождены восточные районы Беларуси.</p>
+                
+                <p>23 сентября 1943 года был освобожден первый белорусский город - Комарин. В последующие дни советские войска освободили Хотимск, Климовичи, Костюковичи и другие населенные пункты.</p>
+                
+                <p>26 ноября 1943 года был освобожден Гомель - первый областной центр Беларуси. Это событие имело огромное политическое и моральное значение.</p>
+                
+                <p>Освобождение восточных районов Беларуси создало плацдарм для последующего наступления на запад и полного освобождения республики.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 15 -->
+        <div id="page-15" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Операция "Багратион"</h2>
+                <p class="page-subtitle">Крупнейшая наступательная операция</p>
+            </div>
+            
+            <div class="page-text">
+                <p>23 июня 1944 года началась операция "Багратион" - одна из крупнейших наступательных операций в истории войн, целью которой было полное освобождение Беларуси.</p>
+                
+                <p>В операции участвовали войска 1-го, 2-го, 3-го Белорусских и 1-го Прибалтийского фронтов общей численностью более 2,4 миллиона человек. Им противостояла немецкая группа армий "Центр".</p>
+                
+                <p>Советские войска нанесли сокрушительные удары по флангам немецкой группировки под Витебском и Бобруйском, а затем окружили и уничтожили основные силы противника восточнее Минска.</p>
+                
+                <p>Операция "Багратион" стала триумфом советского военного искусства и привела к разгрому одной из самых мощных группировок вермахта.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 16 -->
+        <div id="page-16" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Освобождение Минска</h2>
+                <p class="page-subtitle">3 июля 1944 года</p>
+            </div>
+            
+            <div class="page-text">
+                <p>3 июля 1944 года войска 3-го Белорусского фронта при активной поддержке партизан освободили столицу Беларуси - Минск.</p>
+                
+                <p>Город был освобожден в результате стремительного наступления советских войск, обошедших Минск с севера и юга. Немецкий гарнизон оказался в окружении и после коротких, но ожесточенных боев капитулировал.</p>
+                
+                <p>При освобождении Минска особенно отличились 31-я армия генерала В.В. Глаголева и 2-й гвардейский танковый корпус генерала А.С. Бурдейного.</p>
+                
+                <p>Освобождение Минска стало символом близкой победы и важнейшим этапом в истории Беларуси. С тех пор 3 июля отмечается как День Независимости Республики Беларусь.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 17 -->
+        <div id="page-17" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Минский котел</h2>
+                <p class="page-subtitle">Окружение немецкой группировки</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В результате успешного наступления советских войск в ходе операции "Багратион" восточнее Минска была окружена 100-тысячная немецкая группировка.</p>
+                
+                <p>"Минский котел" стал одним из крупнейших окружений в истории войн. В кольце оказались остатки 4-й и 9-й немецких армий, которые пытались прорваться на запад, но были полностью разгромлены.</p>
+                
+                <p>Уничтожение окруженной группировки было завершено к 11 июля 1944 года. В плен попало более 35 тысяч немецких солдат и офицеров, которые 17 июля были проведены по улицам Москвы в знаменитом "параде побежденных".</p>
+                
+                <p>Разгром немецких войск в "Минском котле" открыл советским войскам путь для дальнейшего наступления на запад и освобождения всей территории Беларуси.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 18 -->
+        <div id="page-18" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Освобождение Витебска</h2>
+                <p class="page-subtitle">Прорыв обороны противника</p>
+            </div>
+            
+            <div class="page-text">
+                <p>26 июня 1944 года войска 1-го Прибалтийского и 3-го Белорусского фронтов освободили Витебск - важный укрепленный район немецкой обороны.</p>
+                
+                <p>Витебск был освобожден в результате стремительного наступления, в ходе которого советские войска прорвали сильно укрепленную оборону противника и окружили витебскую группировку вермахта.</p>
+                
+                <p>В боях за Витебск особенно отличились 43-я армия генерала А.П. Белобородова и 39-я армия генерала И.И. Людникова. Активную помощь наступающим войскам оказали витебские партизаны.</p>
+                
+                <p>Освобождение Витебска, считавшегося "воротами в Беларусь", имело важное стратегическое значение и создало благоприятные условия для развития наступления на минском направлении.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 19 -->
+        <div id="page-19" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Берлинская операция</h2>
+                <p class="page-subtitle">Участие белорусских фронтов</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Весной 1945 года войска 1-го и 2-го Белорусских фронтов приняли активное участие в Берлинской операции - завершающей стратегической операции Великой Отечественной войны.</p>
+                
+                <p>1-й Белорусский фронт под командованием маршала Г.К. Жукова наносил главный удар с кюстринского плацдарма непосредственно на Берлин. 2-й Белорусский фронт маршала К.К. Рокоссовского обеспечивал северный фланг наступления.</p>
+                
+                <p>В составе этих фронтов сражались сотни тысяч белорусов, прошедших долгий путь от границ своей родины до столицы Германии. Они проявили массовый героизм в уличных боях за Берлин.</p>
+                
+                <p>Участие белорусских фронтов в штурме Берлина стало символическим завершением освободительной миссии Красной Армии и справедливым возмездием за страдания, причиненные белорусскому народу.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 20 -->
+        <div id="page-20" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">День Победы</h2>
+                <p class="page-subtitle">9 мая 1945 года</p>
+            </div>
+            
+            <div class="page-text">
+                <p>9 мая 1945 года завершилась Великая Отечественная война - самая кровопролитная война в истории человечества.</p>
+                
+                <p>Для Беларуси победа имела особое значение. Республика одной из первых приняла на себя удар врага и понесла огромные потери. Каждый третий житель Беларуси погиб в годы войны.</p>
+                
+                <p>Белорусский народ внес значительный вклад в общую победу. На фронтах сражались более 1,3 миллиона белорусов, в партизанском движении участвовали свыше 370 тысяч человек. Тысячи белорусов были награждены орденами и медалями, 446 человек удостоены звания Героя Советского Союза.</p>
+                
+                <p>Победа в Великой Отечественной войне стала возможной благодаря массовому героизму, самоотверженности и единству народов Советского Союза. Память об этой победе навсегда останется в сердцах потомков.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 21 -->
+        <div id="page-21" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Освобождение Бреста</h2>
+                <p class="page-subtitle">Завершение освобождения Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>28 июля 1944 года войска 1-го Белорусского фронта под командованием маршала К.К. Рокоссовского освободили Брест.</p>
+                
+                <p>Город был освобожден в ходе Люблин-Брестской операции. Штурм Бреста стал завершающим этапом операции "Багратион".</p>
+                
+                <p>Особую символичность имело освобождение Брестской крепости, которая одной из первых приняла на себя удар врага в 1941 году.</p>
+                
+                <p>С освобождением Бреста территория Беларуси была полностью очищена от немецко-фашистских захватчиков.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 22 -->
+        <div id="page-22" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Битва за Днепр</h2>
+                <p class="page-subtitle">Форсирование Днепра и освобождение правобережной Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Битва за Днепр осенью 1943 года стала одним из крупнейших сражений Великой Отечественной войны.</p>
+                
+                <p>Войска Центрального фронта под командованием К.К. Рокоссовского форсировали Днепр севернее Киева и освободили первые районы Беларуси.</p>
+                
+                <p>Советские солдаты под огнем противника переправлялись через широкую реку, используя подручные средства. Многие воины проявили героизм при форсировании Днепра.</p>
+                
+                <p>Успешное форсирование Днепра создало плацдармы для дальнейшего наступления и освобождения Беларуси.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+        
+        <!-- Страница 23 -->
+        <div id="page-23" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Партизанские соединения</h2>
+                <p class="page-subtitle">Создание крупных партизанских бригад</p>
+            </div>
+            
+            <div class="page-text">
+                <p>К 1943 году отдельные партизанские отряды стали объединяться в крупные соединения - бригады и дивизии.</p>
+                
+                <p>Партизанские бригады насчитывали от нескольких сотен до нескольких тысяч человек. Они имели на вооружении не только стрелковое оружие, но и артиллерию, минометы.</p>
+                
+                <p>Крупные партизанские соединения могли проводить масштабные операции, освобождать населенные пункты и удерживать территории.</p>
+                
+                <p>Всего на территории Беларуси действовало более 200 партизанских бригад и отдельных отрядов.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 24 -->
+        <div id="page-24" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Подпольные организации</h2>
+                <p class="page-subtitle">Деятельность подполья в оккупированных городах</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В оккупированных городах Беларуси действовали подпольные организации, объединявшие патриотов.</p>
+                
+                <p>Подпольщики занимались разведкой, диверсиями, распространением листовок, помощью партизанам, спасением мирных жителей от угона в Германию.</p>
+                
+                <p>Крупные подпольные организации действовали в Минске, Витебске, Гомеле, Могилеве и других городах. Минское подполье насчитывало около 9 тысяч человек.</p>
+                
+                <p>Деятельность подполья была крайне опасной, многие подпольщики были раскрыты и казнены оккупантами.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 25 -->
+        <div id="page-25" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Оборона Могилева</h2>
+                <p class="page-subtitle">Героическая оборона города в июле 1941 года</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Оборона Могилева в июле 1941 года стала одним из ярких примеров стойкости советских войск в начальный период войны.</p>
+                
+                <p>В течение 23 дней войска 61-го стрелкового корпуса и народные ополченцы удерживали город против превосходящих сил противника.</p>
+                
+                <p>Особо ожесточенные бои велись на Буйничском поле, где советские воины отразили несколько десятков атак противника, уничтожив около 200 немецких танков.</p>
+                
+                <p>Оборона Могилева сковала значительные силы врага и позволила советскому командованию выиграть время для подготовки обороны на подступах к Москве.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 26 -->
+        <div id="page-26" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Битва под Сенно</h2>
+                <p class="page-subtitle">Крупнейшее танковое сражение начала войны</p>
+            </div>
+            
+            <div class="page-text">
+                <p>С 6 по 10 июля 1941 года в районе городов Лепель и Сенно произошло одно из крупнейших танковых сражений начального периода войны.</p>
+                
+                <p>В боях с обеих сторон участвовало около 1600 танков. Советские 5-й и 7-й механизированные корпуса пытались контратаковать наступающие немецкие войска.</p>
+                
+                <p>Несмотря на превосходство в количестве танков, советские войска понесли тяжелые потери из-за недостаточной подготовки экипажей и проблем со снабжением.</p>
+                
+                <p>Битва под Сенно замедлила продвижение немецких войск и позволила организовать оборону на подступах к Смоленску.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 27 -->
+        <div id="page-27" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Климовичский прорыв</h2>
+                <p class="page-subtitle">Освобождение первых районов Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В сентябре 1943 года войска Брянского фронта начали наступление на территории восточной Беларуси.</p>
+                
+                <p>26 сентября 1943 года был освобожден первый белорусский город - Комарин. В последующие дни советские войска освободили Хотимск, Климовичи, Костюковичи.</p>
+                
+                <p>Освобождение восточных районов Беларуси стало возможным после успешного завершения Курской битвы и общего наступления советских войск.</p>
+                
+                <p>Климовичский прорыв создал плацдарм для дальнейшего освобождения Беларуси и имел важное моральное значение.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 28 -->
+        <div id="page-28" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Операция "Концерт"</h2>
+                <p class="page-subtitle">Вторая крупная операция партизан</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Операция "Концерт" проводилась с 19 сентября по конец октября 1943 года и стала продолжением "Рельсовой войны".</p>
+                
+                <p>В операции участвовало 193 партизанских соединения общей численностью более 120 тысяч человек. Партизаны действовали на территории Беларуси, Украины, Прибалтики и Карелии.</p>
+                
+                <p>За время операции было подорвано более 148 тысяч рельсов, пущено под откос 1003 вражеских эшелона, разрушено 72 железнодорожных моста.</p>
+                
+                <p>Операция "Концерт" серьезно нарушила перевозки противника в самый критический для него период - during подготовки к битве за Днепр.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 29 -->
+        <div id="page-29" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Освобождение Гомеля</h2>
+                <p class="page-subtitle">Первый освобожденный областной центр</p>
+            </div>
+            
+            <div class="page-text">
+                <p>26 ноября 1943 года войска Белорусского фронта под командованием К.К. Рокоссовского освободили Гомель.</p>
+                
+                <p>Освобождение Гомеля стало результатом успешного проведения Гомельско-Речицкой наступательной операции. Город был важным узлом немецкой обороны.</p>
+                
+                <p>При освобождении Гомеля особенно отличились соединения 48-й, 65-й и 61-й армий. Активную помощь наступающим войскам оказали гомельские партизаны.</p>
+                
+                <p>Освобождение первого областного центра Беларуси имело огромное политическое и моральное значение, показав неизбежность освобождения всей республики.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 30 -->
+        <div id="page-30" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Бобруйский котел</h2>
+                <p class="page-subtitle">Окружение немецкой группировки</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В ходе операции "Багратион" 27-29 июня 1944 года войска 1-го Белорусского фронта окружили и уничтожили бобруйскую группировку противника.</p>
+                
+                <p>В "котле" оказались основные силы 9-й немецкой армии - около 70 тысяч солдат и офицеров. После ожесточенных боев группировка была разгромлена.</p>
+                
+                <p>Особую роль в создании "котла" сыграли войска 65-й армии генерала П.И. Батова, которые форсировали Березину и вышли в тыл немецким войскам.</p>
+                
+                <p>Разгром бобруйской группировки создал благоприятные условия для развития наступления на барановичском и minskском направлениях.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 31 -->
+        <div id="page-31" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Освобождение Вилейки</h2>
+                <p class="page-subtitle">Прорыв немецкой обороны</p>
+            </div>
+            
+            <div class="page-text">
+                <p>2 июля 1944 года войска 3-го Белорусского фронта освободили Вилейку - важный узел немецкой обороны на подступах к Молодечно.</p>
+                
+                <p>Освобождение Вилейки стало частью Вилейско-Молодечненской наступательной операции, проводившейся в рамках операции "Багратион".</p>
+                
+                <p>Город был освобожден частями 45-го стрелкового корпуса 5-й армии при активной поддержке авиации и артиллерии.</p>
+                
+                <p>Освобождение Вилейки открыло советским войскам путь на Молодечно и далее на Вильнюс.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 32 -->
+        <div id="page-32" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Борисовско-Бегомльская операция</h2>
+                <p class="page-subtitle">Наступление на минском направлении</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В конце июня - начале июля 1944 года войска 3-го Белорусского фронта провели Борисовско-Бегомльскую наступательную операцию.</p>
+                
+                <p>В ходе операции советские войска освободили города Борисов, Бегомль, Зембин и другие населенные пункты, создав угрозу окружения minskской группировки противника.</p>
+                
+                <p>Особую роль в операции сыграли партизаны бригады "Железняк", которые удерживали Бегомльский район и обеспечивали взаимодействие с наступающими войсками.</p>
+                
+                <p>Успех операции создал условия для стремительного наступления на Минск и окружения крупной немецкой группировки восточнее города.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 33 -->
+        <div id="page-33" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Освобождение Орши</h2>
+                <p class="page-subtitle">Штурм важного железнодорожного узла</p>
+            </div>
+            
+            <div class="page-text">
+                <p>27 июня 1944 года войска 3-го Белорусского фронта освободили Оршу - важный железнодорожный узел и мощный укрепленный район немецкой обороны.</p>
+                
+                <p>Орша была освобождена в результате стремительного наступления 11-й гвардейской и 31-й армий, supported мощными артиллерийскими и авиационными ударами.</p>
+                
+                <p>Город имел стратегическое значение как узел коммуникаций, связывавший группу армий "Центр" с тылом. Его освобождение серьезно нарушило систему управления немецких войск.</p>
+                
+                <p>Освобождение Орши стало важным этапом в разгроме витебско-оршанской группировки противника и создало условия для развития наступления на Минск.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 34 -->
+        <div id="page-34" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Мозырская операция</h2>
+                <p class="page-subtitle">Освобождение Полесской области</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В январе 1944 года войска Белорусского фронта провели Мозырскую наступательную операцию с целью освобождения южных районов Беларуси.</p>
+                
+                <p>В ходе операции советские войска освободили Мозырь и Калинковичи, ликвидировав мозырский плацдарм противника.</p>
+                
+                <p>Освобождение Мозырского района имело важное значение для обеспечения фланга наступления на бобруйском направлении и создания благоприятных условий для будущей операции "Багратион".</p>
+                
+                <p>В боях за освобождение Полесья особенно отличились соединения 61-й и 65-й армий.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 35 -->
+        <div id="page-35" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Рогачевско-Жлобинская операция</h2>
+                <p class="page-subtitle">Наступление на гомельском направлении</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В феврале 1944 года войска Белорусского фронта провели Рогачевско-Жлобинскую наступательную операцию.</p>
+                
+                <p>В ходе операции советские войска освободили Рогачев и Жлобин, нанеся серьезное поражение 9-й немецкой армии.</p>
+                
+                <p>Особенностью операции стало успешное форсирование Днепра в условиях зимней распутицы и прорыв сильно укрепленной обороны противника.</p>
+                
+                <p>Успех операции создал выгодные условия для последующего наступления на бобруйском направлении в ходе операции "Багратион".</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 36 -->
+        <div id="page-36" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Освобождение Полоцка</h2>
+                <p class="page-subtitle">Штурм древнего белорусского города</p>
+            </div>
+            
+            <div class="page-text">
+                <p>4 июля 1944 года войска 1-го Прибалтийского фронта освободили Полоцк - один из древнейших городов Беларуси.</p>
+                
+                <p>Полоцк был освобожден в результате Полоцкой наступательной операции, conducted с 29 июня по 4 июля 1944 года.</p>
+                
+                <p>Город представлял собой мощный узел немецкой обороны, прикрывавший направления на Даугавпилс и Шяуляй. Его освобождение имело важное стратегическое значение.</p>
+                
+                <p>В боях за Полоцк особенно отличились войска 6-й гвардейской и 4-й ударной армий.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 37 -->
+        <div id="page-37" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Белостокская операция</h2>
+                <p class="page-subtitle">Освобождение западных районов Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В июле 1944 года войска 2-го Белорусского фронта провели Белостокскую наступательную операцию.</p>
+                
+                <p>В ходе операции советские войска освободили Новогрудок, Волковыск, Гродно, Белосток и другие города западной Беларуси.</p>
+                
+                <p>Операция развивалась в условиях упорного сопротивления противника, пытавшегося задержать наступление на подступах к Восточной Пруссии.</p>
+                
+                <p>Освобождение западных районов Беларуси завершило изгнание оккупантов с территории республики и создало условия для переноса боевых действий на территорию Польши.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 38 -->
+        <div id="page-38" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Освобождение Гродно</h2>
+                <p class="page-subtitle">Завершающий этап операции "Багратион"</p>
+            </div>
+            
+            <div class="page-text">
+                <p>16 июля 1944 года войска 2-го и 3-го Белорусских фронтов освободили Гродно.</p>
+                
+                <p>Город был освобожден в ходе Белостокской операции после упорных трехдневных боев. Немецкий гарнизон оказывал ожесточенное сопротивление.</p>
+                
+                <p>Освобождение Гродно, важного узла коммуникаций на границе с Польшей, стало завершающим этапом операции "Багратион" на территории Беларуси.</p>
+                
+                <p>С освобождением Гродно территория Беларуси была полностью очищена от немецко-фашистских захватчиков.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 39 -->
+        <div id="page-39" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Люблин-Брестская операция</h2>
+                <p class="page-subtitle">Наступление на варшавском направлении</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В июле-августе 1944 года войска 1-го Белорусского фронта провели Люблин-Брестскую операцию.</p>
+                
+                <p>В ходе операции советские войска освободили Брест, вышли к Висле и захватили плацдармы на ее западном берегу.</p>
+                
+                <p>Операция развивалась в условиях высоких темпов наступления - до 25-30 км в сутки. Советские войска продвинулись на 260-300 км.</p>
+                
+                <p>Успех операции создал благоприятные условия для последующего наступления на варшавском направлении и освобождения Польши.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 40 -->
+        <div id="page-40" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Катынская трагедия</h2>
+                <p class="page-subtitle">Расстрел польских офицеров</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Катынская трагедия - массовые расстрелы польских граждан, осуществленные НКВД СССР весной 1940 года.</p>
+                
+                <p>Жертвами расстрелов стали около 22 тысяч польских граждан - офицеров, полицейских, чиновников, arrested после вступления Красной Армии на территорию Западной Беларуси в сентябре 1939 года.</p>
+                
+                <p>Расстрелы производились в Катынском лесу под Смоленском, в тюрьмах Калинина, Харькова и других местах.</p>
+                
+                <p>Катынская трагедия стала одним из символов сталинских репрессий и до сих пор остается painful страницей в отношениях между Польшей и Россией.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 41 -->
+        <div id="page-41" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Тростенец</h2>
+                <p class="page-subtitle">Крупнейший лагерь смерти на территории Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Тростенец - крупнейший лагерь смерти на территории Беларуси и четвертый по величине в Европе после Освенцима, Майданека и Треблинки.</p>
+                
+                <p>Лагерь был создан осенью 1941 года near Минска и функционировал до лета 1944 года. В его состав входили несколько мест уничтожения: Благовщина, Шашковка и урочище Тростенец.</p>
+                
+                <p>В Тростенце были уничтожены десятки тысяч человек - евреи из Беларуси и европейских стран, советские военнопленные, подпольщики, партизаны.</p>
+                
+                <p>Общее число жертв Тростенца оценивается в 206,5 тысяч человек, что делает его одним из самых страшных символов Холокоста на территории Беларуси.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 42 -->
+        <div id="page-42" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Озаричский лагерь</h2>
+                <p class="page-subtitle">Лагерь для мирных жителей в болотистой местности</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В марте 1944 года немецкие войска создали в болотистой местности near Озарич три лагеря для мирных жителей.</p>
+                
+                <p>Лагеря не имели никаких построек - люди находились под открытым небом, без еды, воды и медицинской помощи. Целью создания лагерей было распространение инфекционных заболеваний среди наступающих советских войск.</p>
+                
+                <p>В Озаричских лагерях содержалось около 50 тысяч человек, в основном старики, женщины и дети. Многие умерли от голода, холода и болезней.</p>
+                
+                <p>Лагеря были освобождены 18-19 марта 1944 года войсками 65-й армии. Преступления в Озаричах были квалифицированы на Нюрнбергском процессе как преступления против человечности.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 43 -->
+        <div id="page-43" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Детские концентрационные лагеря</h2>
+                <p class="page-subtitle">Трагедия детей в годы оккупации</p>
+            </div>
+            
+            <div class="page-text">
+                <p>На территории Беларуси оккупанты создавали специальные лагеря для детей, которые становились донорами крови для немецких солдат.</p>
+                
+                <p>Крупнейшие детские лагеря находились в Красном Береге (Жлобинский район), Острошицком Городке (Логойский район) и других местах.</p>
+                
+                <p>Детей содержали в нечеловеческих условиях, подвергали медицинским экспериментам, использовали как доноров. Многие дети погибали от истощения и болезней.</p>
+                
+                <p>Трагедия детей в годы войны стала одним из самых страшных преступлений нацизма. Память о ней сохраняется в мемориальных комплексах и музеях Беларуси.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 44 -->
+        <div id="page-44" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Принудительный труд</h2>
+                <p class="page-subtitle">Угон белорусов на работы в Германию</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В годы оккупации нацисты проводили политику массового угона мирного населения Беларуси на принудительные работы в Германию.</p>
+                
+                <p>Всего с территории Беларуси было угнано около 380 тысяч человек, в основном молодежь. Их называли "остарбайтерами" (восточными рабочими).</p>
+                
+                <p>Угнанные работали на промышленных предприятиях, в сельском хозяйстве, в частных домах в условиях, близких к рабским. Многие погибли от истощения, болезней и жестокого обращения.</p>
+                
+                <p>После войны только часть угнанных вернулась на родину. Многие остались в Европе или были репрессированы после возвращения в СССР.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 45 -->
+        <div id="page-45" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Хозяйство оккупантов</h2>
+                <p class="page-subtitle">Эксплуатация экономики Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Оккупационные власти проводили политику систематического ограбления экономики Беларуси.</p>
+                
+                <p>Промышленные предприятия демонтировались и вывозились в Германию, сельское хозяйство подвергалось хищнической эксплуатации. Крестьяне были обязаны сдавать большую часть продукции.</p>
+                
+                <p>Вводились различные налоги и поборы, проводилась конфискация имущества. Экономическая политика оккупантов была направлена на максимальное использование ресурсов для нужд войны.</p>
+                
+                <p>Эксплуатация экономики привела к обнищанию населения, голоду и разрухе. Восстановление народного хозяйства после войны потребовало огромных усилий.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 46 -->
+        <div id="page-46" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Культура сопротивления</h2>
+                <p class="page-subtitle">Подпольные газеты, литература, искусство</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Несмотря на жестокий оккупационный режим, в Беларуси продолжалась культурная жизнь, ставшая формой сопротивления.</p>
+                
+                <p>Партизаны и подпольщики издавали газеты и листовки, создавали произведения литературы и искусства. Всего за годы войны в Беларуси издавалось около 160 подпольных газет.</p>
+                
+                <p>В партизанских отрядах работали театральные коллективы, хоры, издавались рукописные журналы. Культура стала важным средством поддержания морального духа.</p>
+                
+                <p>Деятели культуры - писатели, художники, музыканты - активно участвовали в сопротивлении, многие погибли в борьбе с оккупантами.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 47 -->
+        <div id="page-47" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Религия в годы войны</h2>
+                <p class="page-subtitle">Деятельность церквей в оккупации и подполье</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В годы войны религиозные организации Беларуси заняли различную позицию по отношению к оккупации и сопротивлению.</p>
+                
+                <p>Немецкие власти разрешили деятельность некоторых религиозных конфессий, hoping использовать их в своих интересах. Были вновь открыты многие православные храмы, закрытые в советское время.</p>
+                
+                <p>Многие священнослужители участвовали в сопротивлении - помогали партизанам, укрывали мирных жителей, вели патриотическую проповедь. Некоторые были казнены оккупантами.</p>
+                
+                <p>Отношения между религиозными организациями и оккупационными властями были сложными и противоречивыми, отражая трагический выбор, стоявший перед верующими в условиях войны.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 48 -->
+        <div id="page-48" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Медицина в партизанских отрядах</h2>
+                <p class="page-subtitle">Организация медицинской помощи в условиях леса</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В партизанских отрядах Беларуси была создана эффективная система медицинского обслуживания.</p>
+                
+                <p>Партизанские медики оказывали помощь раненым и больным в сложнейших условиях - без достаточного количества лекарств, оборудования, часто под угрозой нападения.</p>
+                
+                <p>В крупных партизанских соединениях создавались госпитали, работали квалифицированные врачи и медсестры. Медикаменты и оборудование доставлялись с "Большой земли" или добывались в боях.</p>
+                
+                <p>Благодаря самоотверженной работе медиков тысячи партизан были возвращены в строй. Многие медики погибли, спасая жизни бойцов.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 49 -->
+        <div id="page-49" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Партизанские аэродромы</h2>
+                <p class="page-subtitle">Связь с Большой землей и снабжение</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Для поддержания связи с советским тылом и снабжения партизан в белорусских лесах создавались партизанские аэродромы и посадочные площадки.</p>
+                
+                <p>Самолеты доставляли оружие, боеприпасы, медикаменты, газеты, а также специалистов-подрывников, радистов, медиков. Обратными рейсами вывозили раненых, детей, важные документы.</p>
+                
+                <p>Крупные партизанские аэродромы действовали в Полоцко-Лепельской зоне, Борисовско-Бегомльском массиве и других районах. Некоторые принимали по несколько самолетов в сутки.</p>
+                
+                <p>Деятельность партизанских аэродромов была крайне опасной - их постоянно искали и бомбили немецкие войска.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 50 -->
+        <div id="page-50" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Женщины в партизанском движении</h2>
+                <p class="page-subtitle">Роль женщин в сопротивлении оккупантам</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Женщины играли важнейшую роль в партизанском движении Беларуси, составляя около 25% его участников.</p>
+                
+                <p>Они служили разведчицами, связными, медсестрами, подрывницами, участвовали в боевых операциях. Многие женщины командовали партизанскими группами и отрядами.</p>
+                
+                <p>Среди известных партизанок - Вера Хоружая, Ефросинья Зенькова, Мария Осипова, Надежда Троян и многие другие. Их подвиги стали символом мужества и самопожертвования.</p>
+                
+                <p>Тысячи женщин погибли в борьбе с оккупантами, многие были казнены или замучены в застенках гестапо.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 51 -->
+        <div id="page-51" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Дети-партизаны</h2>
+                <p class="page-subtitle">Подвиги юных участников сопротивления</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В партизанском движении Беларуси участвовали тысячи детей и подростков, многие из которых совершили героические подвиги.</p>
+                
+                <p>Юные партизаны выполняли роль разведчиков, связных, подрывников. Они добывали ценные сведения о противнике, распространяли листовки, участвовали в диверсиях.</p>
+                
+                <p>Среди известных юных героев - Марат Казей, Зина Портнова, Леня Голиков, Валя Котик и многие другие. Многие из них погибли, выполняя боевые задания.</p>
+                
+                <p>Подвиги детей-партизан стали символом мужества и преданности Родине, примером для последующих поколений.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 52 -->
+        <div id="page-52" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Разведка и контрразведка</h2>
+                <p class="page-subtitle">Деятельность спецслужб в тылу врага</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Советские спецслужбы активно действовали на оккупированной территории Беларуси, организуя разведывательную и диверсионную работу.</p>
+                
+                <p>Спецгруппы НКВД и ГРУ забрасывались в тыл врага для сбора разведывательной информации, организации партизанского движения, проведения диверсий.</p>
+                
+                <p>Партизаны и подпольщики добывали ценнейшие сведения о дислокации войск, укреплениях, планах командования противника. Эта информация играла важную роль в планировании операций Красной Армии.</p>
+                
+                <p>Деятельность разведчиков и контрразведчиков была крайне опасной - провал почти всегда означал смерть.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 53 -->
+        <div id="page-53" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Партизанские рейды</h2>
+                <p class="page-subtitle">Дальние походы по тылам противника</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Партизанские соединения Беларуси проводили глубокие рейды по тылам противника, распространяя партизанское движение на новые территории.</p>
+                
+                <p>В ходе рейдов партизаны преодолевали сотни километров, ведя бои с немецкими гарнизонами, разрушая коммуникации, вовлекая местное население в борьбу с оккупантами.</p>
+                
+                <p>Наиболее известные рейды были проведены соединениями под командованием В.З. Коржа, С.А. Ковпака, А.Ф. Федорова и других партизанских командиров.</p>
+                
+                <p>Рейдовая тактика позволяла партизанам наносить удары по неожиданным для противника направлениям и дезорганизовывать систему оккупационного управления.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 54 -->
+        <div id="page-54" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Боевое братство</h2>
+                <p class="page-subtitle">Многонациональный состав партизанских отрядов</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Партизанское движение Беларуси было интернациональным - в нем участвовали представители многих народов Советского Союза и других стран.</p>
+                
+                <p>В партизанских отрядах сражались русские, белорусы, украинцы, евреи, поляки, литовцы, латыши, представители народов Кавказа и Средней Азии, а также бежавшие из плена военнопленные различных национальностей.</p>
+                
+                <p>Боевое братство, взаимовыручка и единство перед лицом общего врага стали залогом успеха партизанской борьбы.</p>
+                
+                <p>Интернациональный характер сопротивления стал ярким проявлением дружбы народов в борьбе с фашизмом.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 55 -->
+        <div id="page-55" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Освобождение Прибалтики</h2>
+                <p class="page-subtitle">Участие белорусских фронтов в освобождении соседних республик</p>
+            </div>
+            
+            <div class="page-text">
+                <p>После освобождения Беларуси войска белорусских фронтов приняли активное участие в освобождении Прибалтийских республик.</p>
+                
+                <p>1-й Прибалтийский и 3-й Белорусский фронты вели наступление в Литве и Латвии, 2-й Белорусский фронт - в Польше.</p>
+                
+                <p>В ходе Прибалтийской операции советские войска освободили Вильнюс, Ригу, Таллин и другие города, окружили и уничтожили курляндскую группировку противника.</p>
+                
+                <p>Участие в освобождении Прибалтики стало продолжением боевого пути воинов-белорусов, начавшегося на границах родной республики.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 56 -->
+        <div id="page-56" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Висло-Одерская операция</h2>
+                <p class="page-subtitle">Наступление на территории Польши</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В январе-феврале 1945 года войска 1-го Белорусского фронта под командованием Г.К. Жукова провели Висло-Одерскую стратегическую операцию.</p>
+                
+                <p>В ходе операции советские войска освободили значительную часть Польши, вышли к Одеру и захватили плацдармы на его западном берегу.</p>
+                
+                <p>Операция характеризовалась высокими темпами наступления - до 25-30 км в сутки. Было разгромлено 35 немецких дивизий, еще 25 потеряли от 50 до 70% личного состава.</p>
+                
+                <p>Успех Висло-Одерской операции создал благоприятные условия для последующего наступления на Берлин.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 57 -->
+        <div id="page-57" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Восточно-Прусская операция</h2>
+                <p class="page-subtitle">Штурм цитадели немецкого милитаризма</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В январе-апреле 1945 года войска 2-го и 3-го Белорусских фронтов провели Восточно-Прусскую операцию.</p>
+                
+                <p>В ходе операции советские войска штурмовали мощные укрепления Восточной Пруссии, считавшейся цитаделью немецкого милитаризма.</p>
+                
+                <p>Особо ожесточенные бои велись за Кенигсберг, который был превращен в крепость. После упорных боев город был взят штурмом 9 апреля 1945 года.</p>
+                
+                <p>Разгром восточно-прусской группировки противника ликвидировал важный плацдарм Германии на востоке и обеспечил безопасность фланга наступления на Берлин.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 58 -->
+        <div id="page-58" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Штурм Кенигсберга</h2>
+                <p class="page-subtitle">Взятие мощной крепости</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Штурм Кенигсберга, проведенный войсками 3-го Белорусского фронта под командованием А.М. Василевского 6-9 апреля 1945 года, стал одной из самых brilliants операций завершающего этапа войны.</p>
+                
+                <p>Кенигсберг был превращен в мощную крепость с тремя кольцами обороны, многочисленными фортами и дотами. Гарнизон насчитывал около 130 тысяч человек.</p>
+                
+                <p>Советские войска применили innovative тактику штурма укрепленных городов, использовали мощную артиллерию и авиацию, штурмовые группы.</p>
+                
+                <p>После четырехдневного штурма гарнизон Кенигсберга капитулировал. Победа под Кенигсбергом стала revenge за разрушенные белорусские города и села.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 59 -->
+        <div id="page-59" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Берлинская стратегическая операция</h2>
+                <p class="page-subtitle">Завершающая операция Великой Отечественной войны</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Берлинская операция, проведенная 16 апреля - 8 мая 1945 года, стала завершающей стратегической операцией Великой Отечественной войны.</p>
+                
+                <p>В операции участвовали войска 1-го и 2-го Белорусских, 1-го Украинского фронтов общей численностью более 2,5 миллионов человек.</p>
+                
+                <p>После ожесточенных боев на подступах к Берлину советские войска штурмом овладели столицей Германии. 2 мая берлинский гарнизон капитулировал.</p>
+                
+                <p>Берлинская операция завершилась полным разгромом противника и капитуляцией Германии, ознаменовав победу советского народа в Великой Отечественной войне.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 60 -->
+        <div id="page-60" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Подписание акта о капитуляции</h2>
+                <p class="page-subtitle">Окончательное поражение нацистской Германии</p>
+            </div>
+            
+            <div class="page-text">
+                <p>8 мая 1945 года в Карлсхорсте (пригород Берлина) был подписан Акт о безоговорочной капитуляции Германии.</p>
+                
+                <p>От имени немецкого верховного командования акт подписали генерал-фельдмаршал В. Кейтель, генерал-адмирал Г. Фридебург и генерал-полковник авиации Г. Штумпф.</p>
+                
+                <p>От имени советского командования акт подписал маршал Г.К. Жуков, от союзного командования - главный маршал авиации Великобритании А. Теддер.</p>
+                
+                <p>Подписание Акта о капитуляции ознаменовало окончание Великой Отечественной войны и Второй мировой войны в Европе. Цена Победы была огромной - советский народ потерял около 27 миллионов человек.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 61 -->
+        <div id="page-61" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Пражская операция</h2>
+                <p class="page-subtitle">Последняя стратегическая операция в Европе</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Пражская операция, проведенная 6-11 мая 1945 года, стала последней стратегической операцией советских войск в Европе в ходе Второй мировой войны.</p>
+                
+                <p>В операции участвовали войска 1-го, 4-го и 2-го Украинских фронтов, которые нанесли удары по сходящимся направлениям на Прагу с целью окружения немецкой группы армий "Центр".</p>
+                
+                <p>Советские войска совершили стремительный марш-бросок и 9 мая освободили Прагу, где продолжались бои между повстанцами и немецкими войсками.</p>
+                
+                <p>Пражская операция завершила освобождение Чехословакии и привела к капитуляции последней крупной группировки вермахта в Европе.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 62 -->
+        <div id="page-62" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Возвращение военнопленных</h2>
+                <p class="page-subtitle">Репатриация советских граждан после войны</p>
+            </div>
+            
+            <div class="page-text">
+                <p>После окончания войны начался сложный процесс возвращения на родину советских граждан, оказавшихся за границей - военнопленных, угнанных на работы, перемещенных лиц.</p>
+                
+                <p>Всего за годы войны в плену оказалось около 5,7 миллионов советских военнослужащих, из которых погибло около 3,3 миллионов. Многие из выживших прошли через фильтрационные лагеря НКВД после возвращения.</p>
+                
+                <p>Возвращение на родину стало испытанием для многих - сталинский режим с подозрением относился к бывшим военнопленным и гражданским лицам, побывавшим за границей.</p>
+                
+                <p>Трагедия военнопленных и их сложная судьба после возвращения долгое время оставались малоизученной страницей истории войны.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 63 -->
+        <div id="page-63" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Восстановление народного хозяйства</h2>
+                <p class="page-subtitle">Первые шаги по возрождению разрушенной экономики</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Беларусь понесла колоссальные потери в годы войны - были разрушены 209 городов и районных центров, 9200 деревень, уничтожено около половины национального богатства республики.</p>
+                
+                <p>Восстановление народного хозяйства началось сразу после освобождения территории. Уже в 1944 году были приняты постановления о восстановлении Минска, Витебска, Гомеля и других городов.</p>
+                
+                <p>Трудности восстановления усугублялись нехваткой рабочих рук, техники, материалов. Люди работали в тяжелейших условиях, часто живя в землянках и бараках.</p>
+                
+                <p>Благодаря героическим усилиям белорусского народа к началу 1950-х годов удалось в основном восстановить разрушенное войной хозяйство.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 64 -->
+        <div id="page-64" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Партизанские парады</h2>
+                <p class="page-subtitle">Торжественные шествия освободителей</p>
+            </div>
+            
+            <div class="page-text">
+                <p>После освобождения Беларуси в городах республики прошли торжественные парады партизан, ставшие символическим актом признания их вклада в Победу.</p>
+                
+                <p>Самый масштабный партизанский парад состоялся 16 июля 1944 года в Минске. В нем участвовало около 30 тысяч партизан, представлявших все крупные соединения Беларуси.</p>
+                
+                <p>Парады прошли также в Витебске, Могилеве, Гомеле и других городах. Они демонстрировали мощь партизанского движения и его роль в освобождении республики.</p>
+                
+                <p>Партизанские парады стали зримым воплощением торжества справедливости и признания подвига народных мстителей.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 65 -->
+        <div id="page-65" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Награды и звания</h2>
+                <p class="page-subtitle">Герои Советского Союза из Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>За мужество и героизм, проявленные в годы Великой Отечественной войны, звания Героя Советского Союза были удостоены 446 уроженцев Беларуси и лиц, призванных из республики.</p>
+                
+                <p>Среди них - летчики П.Я. Головачев и И.И. Гусаковский, танкист И.И. Якубовский, артиллерист В.И. Барминский, пехотинец С.Ф. Шутов и многие другие.</p>
+                
+                <p>Четыре белоруса были удостоены звания Героя Советского Союза дважды: П.Я. Головачев, И.И. Гусаковский, С.Ф. Шутов и И.И. Якубовский.</p>
+                
+                <p>Тысячи белорусов были награждены орденами и медалями за боевые заслуги. Их подвиги стали примером мужества и преданности Родине.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 66 -->
+        <div id="page-66" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Поисковое движение</h2>
+                <p class="page-subtitle">Увековечение памяти павших воинов</p>
+            </div>
+            
+            <div class="page-text">
+                <p>После войны в Беларуси начало развиваться поисковое движение, направленное на установление судеб погибших и пропавших без вести воинов.</p>
+                
+                <p>Поисковики ведут работу по обнаружению неучтенных воинских захоронений, установлению имен погибших, розыску родственников.</p>
+                
+                <p>Ежегодно в Беларуси проводятся десятки поисковых экспедиций, в ходе которых поднимаются и с воинскими почестями перезахораниваются останки советских воинов.</p>
+                
+                <p>Деятельность поискового движения имеет огромное нравственное значение, сохраняя память о павших защитниках Отечества.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 67 -->
+        <div id="page-67" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Книги Памяти</h2>
+                <p class="page-subtitle">Сборники с именами погибших защитников Отечества</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В Беларуси издаются многотомные Книги Памяти, содержащие сведения о погибших, пропавших без вести, умерших от ран защитниках Отечества.</p>
+                
+                <p>В Книги Памяти включены имена воинов, партизан, подпольщиков, мирных жителей, погибших в годы Великой Отечественной войны.</p>
+                
+                <p>Издание Книг Памяти стало всенародным делом - в их подготовке участвуют архивы, военкоматы, краеведы, родственники погибших.</p>
+                
+                <p>Книги Памяти являются уникальным историческим источником и данью уважения тем, кто отдал жизнь за свободу и независимость Родины.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 68 -->
+        <div id="page-68" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Мемориальные комплексы</h2>
+                <p class="page-subtitle">Хатынь, Брестская крепость, Курган Славы</p>
+            </div>
+            
+            <div class="page-text">
+                <p>На территории Беларуси созданы многочисленные мемориальные комплексы, увековечивающие память о жертвах и героях войны.</p>
+                
+                <p>Хатынь - символ трагедии белорусского народа, память о сотнях сожженных деревень. Брестская крепость - памятник мужеству защитников в первые дни войны.</p>
+                
+                <p>Курган Славы под Минском сооружен в честь подвига советских воинов в операции "Багратион". Мемориальный комплекс "Тростенец" напоминает о жертвах Холокоста.</p>
+                
+                <p>Эти и другие мемориалы стали местами поклонения и сохранения исторической памяти для нынешних и будущих поколений.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 69 -->
+        <div id="page-69" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Музеи боевой славы</h2>
+                <p class="page-subtitle">Сохранение реликвий военного времени</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В Беларуси создана сеть музеев, посвященных Великой Отечественной войне, которые сохраняют и популяризируют историческую память.</p>
+                
+                <p>Белорусский государственный музей истории Великой Отечественной войны в Минске является одним из крупнейших в мире музеев, посвященных этой теме.</p>
+                
+                <p>Музеи боевой славы работают во всех областных центрах, многих районных городах, школах. Они хранят уникальные экспонаты - документы, фотографии, личные вещи участников войны.</p>
+                
+                <p>Деятельность музеев играет важную роль в патриотическом воспитании молодежи и сохранении правды о войне.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 70 -->
+        <div id="page-70" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Ветеранские организации</h2>
+                <p class="page-subtitle">Деятельность объединений участников войны</p>
+            </div>
+            
+            <div class="page-text">
+                <p>После войны в Беларуси были созданы ветеранские организации, объединившие участников Великой Отечественной войны.</p>
+                
+                <p>Ветеранские организации занимаются социальной защитой бывших фронтовиков, сохранением исторической памяти, патриотическим воспитанием молодежи.</p>
+                
+                <p>Ветераны ведут активную общественную работу - выступают в школах, участвуют в памятных мероприятиях, передают свой опыт молодому поколению.</p>
+                
+                <p>С годами ряды ветеранов редеют, но их подвиг и вклад в Победу навсегда останутся в памяти благодарных потомков.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 71 -->
+        <div id="page-71" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Уроки Памяти</h2>
+                <p class="page-subtitle">Воспитание молодежи на примерах героизма</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В белорусских школах и учебных заведениях проводятся Уроки Памяти, посвященные Великой Отечественной войне.</p>
+                
+                <p>На этих уроках students знакомятся с историей войны, подвигами героев, трагедией мирного населения. Часто на уроках присутствуют ветераны, дети войны, поисковики.</p>
+                
+                <p>Уроки Памяти проводятся не только в классах, но и на местах боев, в музеях, у мемориалов. Это помогает сделать историю живой и понятной для молодого поколения.</p>
+                
+                <p>Воспитание на примерах героизма и самопожертвения предков формирует у молодежи чувство патриотизма и гражданской ответственности.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 72 -->
+        <div id="page-72" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Военно-историческая реконструкция</h2>
+                <p class="page-subtitle">Воссоздание событий войны для сохранения исторической правды</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В Беларуси развивается движение военно-исторической реконструкции, участники которого воссоздают события Великой Отечественной войны.</p>
+                
+                <p>Реконструкторы тщательно изучают исторические материалы, форму, вооружение, тактику боевых действий. Они проводят масштабные реконструкции ключевых сражений.</p>
+                
+                <p>Наиболее известные реконструкции проходят на исторических местах - у Брестской крепости, на линии Сталина, на местах крупных боев операции "Багратион".</p>
+                
+                <p>Военно-историческая реконструкция помогает наглядно представить события войны и является эффективной формой исторического просвещения.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 73 -->
+        <div id="page-73" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Литература о войне</h2>
+                <p class="page-subtitle">Произведения белорусских писателей-фронтовиков</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Великая Отечественная война стала центральной темой в творчестве многих белорусских писателей, в том числе участников войны.</p>
+                
+                <p>Алесь Адамович создал знаменитую "Хатынскую повесть" и "Блокадную книгу". Василь Быков в своих произведениях исследовал нравственный выбор человека на войне.</p>
+                
+                <p>Иван Мележ, Иван Шамякин, Владимир Короткевич и другие писатели обращались к военной теме, создавая правдивые и пронзительные произведения.</p>
+                
+                <p>Литература о войне стала важным средством сохранения исторической памяти и передачи духовного опыта поколения победителей.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 74 -->
+        <div id="page-74" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Кинематограф</h2>
+                <p class="page-subtitle">Фильмы о войне, снятые в Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Белорусский кинематограф внес значительный вклад в создание фильмов о Великой Отечественной войне.</p>
+                
+                <p>На киностудии "Беларусьфильм" были сняты такие известные картины, как "Война под крышами", "Сыновья уходят в бой", "Полонез Огинского", "Иди и смотри".</p>
+                
+                <p>Фильм Элема Климова "Иди и смотри", снятый в Беларуси, стал одним из самых сильных антивоенных высказываний в мировом кинематографе.</p>
+                
+                <p>Кино о войне продолжает сниматься и сегодня, обращаясь к новым аспектам трагедии и подвига белорусского народа.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 75 -->
+        <div id="page-75" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Песни военных лет</h2>
+                <p class="page-subtitle">Музыкальное наследие Великой Отечественной</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Песни военных лет стали неотъемлемой частью культурного наследия Великой Отечественной войны.</p>
+                
+                <p>"Священная война", "Катюша", "В землянке", "Темная ночь", "Синий платочек" и многие другие песни поднимали боевой дух солдат, поддерживали надежду в тылу.</p>
+                
+                <p>В Беларуси создавались свои песни - партизанские, подпольные, фронтовые. Они передавали особую атмосферу борьбы на оккупированной территории.</p>
+                
+                <p>Песни военных лет продолжают звучать и сегодня, связывая поколения общей памятью и эмоциональным переживанием трагедии и подвига.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 76 -->
+        <div id="page-76" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Фронтовые письма</h2>
+                <p class="page-subtitle">Личные свидетельства участников войны</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Фронтовые письма - бесценные исторические документы, сохранившие живые голоса участников войны.</p>
+                
+                <p>В этих письмах солдаты делились с близкими своими переживаниями, мыслями о войне, надеждами на будущее. Многие письма стали последними весточками с фронта.</p>
+                
+                <p>Фронтовые письма отличаются особой искренностью и глубиной. В них отражены и бытовые детали фронтовой жизни, и философские размышления о смысле войны.</p>
+                
+                <p>Сохранение и изучение фронтовых писем помогает понять внутренний мир поколения, прошедшего через горнило войны.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 77 -->
+        <div id="page-77" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Дневники оккупации</h2>
+                <p class="page-subtitle">Записи мирных жителей о жизни в оккупации</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Дневники, которые вели мирные жители в годы оккупации, являются уникальными свидетельствами повседневной жизни в условиях террора и насилия.</p>
+                
+                <p>В этих дневниках зафиксированы детали оккупационного быта, настроения населения, факты зверств захватчиков, проявления сопротивления.</p>
+                
+                <p>Особую ценность представляют дневники детей и подростков, которые с особой остротой воспринимали трагедию войны.</p>
+                
+                <p>Дневники оккупации помогают понять, как обычные люди пытались сохранить человеческое достоинство в нечеловеческих условиях.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 78 -->
+        <div id="page-78" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Семейные архивы</h2>
+                <p class="page-subtitle">Сохранение памяти в семьях белорусов</p>
+            </div>
+            
+            <div class="page-text">
+                <p>В каждой белорусской семье хранится память о Великой Отечественной войне - фотографии, письма, награды, воспоминания родственников.</p>
+                
+                <p>Семейные архивы являются живой связью поколений, передающей эмоциональное переживание трагедии и подвига.</p>
+                
+                <p>Многие семьи бережно хранят истории своих предков - фронтовиков, партизан, подпольщиков, узников концлагерей, работников тыла.</p>
+                
+                <p>Сохранение семейной памяти о войне - это личный вклад каждого белоруса в общее дело исторической памяти народа.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 79 -->
+        <div id="page-79" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Уроки истории</h2>
+                <p class="page-subtitle">Значение Победы для современных поколений</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Великая Отечественная война оставила глубокие уроки, актуальные и для современных поколений.</p>
+                
+                <p>Главный урок - ценность мира и необходимость защищать его от возрождения нацизма и агрессии. Память о войне учит бдительности и ответственности.</p>
+                
+                <p>Опыт единства народов в борьбе с общим врагом показывает важность межнационального согласия и взаимопонимания.</p>
+                
+                <p>Подвиг поколения победителей является нравственным ориентиром, примером мужества, стойкости и верности Родине в самых тяжелых испытаниях.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Страница 80 -->
+        <div id="page-80" class="page-content">
+            <div class="page-header">
+                <h2 class="page-title-main">Наследие Победы</h2>
+                <p class="page-subtitle">Значение подвига предков для будущего Беларуси</p>
+            </div>
+            
+            <div class="page-text">
+                <p>Наследие Победы в Великой Отечественной войне является фундаментом национального самосознания белорусского народа.</p>
+                
+                <p>Память о подвиге предков, отстоявших свободу и независимость Родины, объединяет общество, формирует патриотические ценности.</p>
+                
+                <p>Исторический опыт войны учит ценить мир, укреплять государственный суверенитет, развивать экономику и культуру.</p>
+                
+                <p>Наследие Победы - это не только память о прошлом, но и духовный ресурс для строительства будущего Беларуси как мирного, процветающего и суверенного государства.</p>
+            </div>
+            
+            <button class="back-button">Назад к списку страниц</button>
+        </div>
+
+        <!-- Память -->
+        <section id="memory" class="section" style="display: none;">
+            <h2 class="section-title">Вечная память</h2>
+            <p>Беларусь потеряла в годы войны более 2,5 миллионов человек — каждого третьего жителя. Эта трагедия навсегда останется в памяти народа.</p>
+            <p>Сегодня на территории страны находится более 8,5 тысяч воинских захоронений и мемориальных комплексов, которые хранят память о подвиге и жертвах войны.</p>
+        </section>
+        
+        <!-- Архивы -->
+        <section id="archives" class="section" style="display: none;">
+            <h2 class="section-title">Архивные материалы</h2>
+            <p>На сайте представлены оцифрованные документы, фотографии, письма с фронта и воспоминания участников событий.</p>
+            <p>Эти материалы помогают сохранить правду о войне и передать её будущим поколениям.</p>
+        </section>
+        
+        <!-- Настройки темы -->
+        <section id="theme-settings" class="section" style="display: none;">
+            <h2 class="section-title">Настройки темы</h2>
+            <div class="settings-section">
+                <div class="settings-option">
+                    <h3>Выбор темы оформления</h3>
+                    <p>Выберите наиболее удобную для вас цветовую схему:</p>
+                    <div class="theme-options">
+                        <div class="theme-option active" data-theme="dark">Темная тема</div>
+                        <div class="theme-option" data-theme="light">Светлая тема</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Настройки шрифта -->
+        <section id="font-settings" class="section" style="display: none;">
+            <h2 class="section-title">Настройки шрифта</h2>
+            <div class="settings-section">
+                <div class="settings-option">
+                    <h3>Выбор шрифта</h3>
+                    <p>Выберите наиболее удобный для чтения шрифт:</p>
+                    <div class="font-options">
+                        <div class="font-option active" data-font="times">Times New Roman</div>
+                        <div class="font-option" data-font="arial">Arial</div>
+                        <div class="font-option" data-font="georgia">Georgia</div>
+                        <div class="font-option" data-font="verdana">Verdana</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <p class="quote">"Память о войне – это не только память о победах и поражениях, но прежде всего память о людях, отдавших свои жизни за мирное небо над головой."</p>
+            <p>© 2025 "80 страниц истории Великой Отечественной войны в Беларуси"</p>
+            <p>Сайт создан в память о жертвах и героях войны</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Навигация по разделам
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('section, .page-content');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Скрыть все разделы
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Показать выбранный раздел
+                    if (targetId === 'main-content') {
+                        document.getElementById('main-content').style.display = 'block';
+                    } else if (targetId === 'pages') {
+                        document.getElementById('pages').style.display = 'block';
+                    } else if (targetId === 'memory') {
+                        document.getElementById('memory').style.display = 'block';
+                    } else if (targetId === 'archives') {
+                        document.getElementById('archives').style.display = 'block';
+                    } else if (targetId === 'theme-settings') {
+                        document.getElementById('theme-settings').style.display = 'block';
+                    } else if (targetId === 'font-settings') {
+                        document.getElementById('font-settings').style.display = 'block';
+                    }
+                });
+            });
+            
+            // Открытие страниц истории
+            const pageCards = document.querySelectorAll('.page-card');
+            const pageContents = document.querySelectorAll('.page-content');
+            
+            pageCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const pageId = 'page-' + this.getAttribute('data-page');
+                    
+                    // Скрыть все разделы
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Показать выбранную страницу
+                    document.getElementById(pageId).style.display = 'block';
+                });
+            });
+            
+            // Кнопка "Назад" на страницах
+            const backButtons = document.querySelectorAll('.back-button');
+            
+            backButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Скрыть все разделы
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    
+                    // Показать раздел со страницами
+                    document.getElementById('pages').style.display = 'block';
+                });
+            });
+            
+            // Управление темой
+            const themeOptions = document.querySelectorAll('.theme-option');
+            
+            // Загрузка сохраненной темы из localStorage
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            setTheme(savedTheme);
+            
+            themeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const theme = this.getAttribute('data-theme');
+                    setTheme(theme);
+                    
+                    // Сохранение выбора в localStorage
+                    localStorage.setItem('theme', theme);
+                    
+                    // Обновление активного состояния кнопок
+                    themeOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            function setTheme(theme) {
+                if (theme === 'light') {
+                    document.body.classList.add('light-theme');
+                } else {
+                    document.body.classList.remove('light-theme');
+                }
+                
+                // Обновление активного состояния кнопок
+                themeOptions.forEach(opt => {
+                    if (opt.getAttribute('data-theme') === theme) {
+                        opt.classList.add('active');
+                    } else {
+                        opt.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Управление шрифтом
+            const fontOptions = document.querySelectorAll('.font-option');
+            
+            // Загрузка сохраненного шрифта из localStorage
+            const savedFont = localStorage.getItem('font') || 'times';
+            setFont(savedFont);
+            
+            fontOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    const font = this.getAttribute('data-font');
+                    setFont(font);
+                    
+                    // Сохранение выбора в localStorage
+                    localStorage.setItem('font', font);
+                    
+                    // Обновление активного состояния кнопок
+                    fontOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            function setFont(font) {
+                // Удаляем все классы шрифтов
+                document.body.classList.remove('font-arial', 'font-georgia', 'font-verdana');
+                
+                // Добавляем выбранный шрифт
+                if (font !== 'times') {
+                    document.body.classList.add(`font-${font}`);
+                }
+                
+                // Обновление активного состояния кнопок
+                fontOptions.forEach(opt => {
+                    if (opt.getAttribute('data-font') === font) {
+                        opt.classList.add('active');
+                    } else {
+                        opt.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
